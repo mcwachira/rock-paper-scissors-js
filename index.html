@@ -31,18 +31,49 @@
         <div class="hands">
 
             <div class="paper">
-                <img src="assets/Paper.png" alt="paper Hand">
+                <img src="assets/Paper.png" alt="paper Hand" onclick='pickUsersHand("paper")'>
             </div>
             <div class="scissors">
-                <img src="assets/Scissors.png" alt="Scissors Hand">
+                <img src="assets/Scissors.png" alt="Scissors Hand" onclick="pickUsersHand('scissors')">
             </div>
             <div class="rock">
-                <img src="assets/Rock.png" alt="Rock Hand">
+                <img src="assets/Rock.png" alt="Rock Hand" onclick="pickUsersHand('rock')">
             </div>
 
         </div>
+
+        <div class="contest">
+            <div class="userHand">
+                <h1>
+                    You picked
+                </h1>
+                <div class="handImageContainer">
+                    <img src="assets/Paper.png" alt="paper Hand">
+                </div>
+
+            </div>
+
+            <div class="results">
+                <h1>
+                    You Loose!
+                </h1>
+                <button>
+                    play again
+                </button>
+
+            </div>
+            <div class="houseHnad">
+                <h1>The house picked</h1>
+
+                <div class="handImageContainer">
+                    <img src="assets/Rock.png" alt="rock  Hand">
+                </div>
+            </div>
+        </div>
     </div>
 
+
+    <script src="app.js"></script>
 </body>
 
 </html>
