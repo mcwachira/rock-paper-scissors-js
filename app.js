@@ -93,46 +93,81 @@ const housePickedHand = (imagesData) => {
 }
 
 
+//added a switch statement  instead of using if else statements
+
+// const Results = (userHand, houseHand) => {
+//     console.log(houseHand)
+
+//     if (userHand == "paper" && houseHand == "scissors") {
+//         setResults("YOU LOSE!");
+//         setScore(Score - 1);
+//     }
+//     if (userHand == "paper" && houseHand == "rock") {
+//         setResults("YOU WIN!");
+//         setScore(Score + 1);
+//     }
+//     if (userHand == "paper" && houseHand == "paper") {
+//         setResults("It's a tie!");
+//     }
+//     if (userHand == "rock" && houseHand == "scissors") {
+//         setResults("YOU WIN!");
+//         setScore(Score + 1);
+//     }
+//     if (userHand == "rock" && houseHand == "paper") {
+//         setResults("YOU LOSE!");
+//         setScore(Score - 1);
+//     }
+//     if (userHand == "rock" && houseHand == "rock") {
+//         setResults("It's a tie!");
+//     }
+//     if (userHand == "scissors" && houseHand == "scissors") {
+//         Contest.classList.add('active')
+
+//         setResults("It's a tie!");
+//     }
+//     if (userHand == "scissors" && houseHand == "rock") {
+//         setResults("YOU LOSE!");
+//         setScore(Score - 1);
+//     }
+//     if (userHand == "scissors" && houseHand == "paper") {
+//         setResults("YOU WIN!");
+//         setScore(Score + 1);
+//     }
+// };
 
 
 const Results = (userHand, houseHand) => {
     console.log(houseHand)
-    if (userHand == "paper" && houseHand == "scissors") {
-        setResults("YOU LOSE!");
-        setScore(Score - 1);
-    }
-    if (userHand == "paper" && houseHand == "rock") {
-        setResults("YOU WIN!");
-        setScore(Score + 1);
-    }
-    if (userHand == "paper" && houseHand == "paper") {
-        setResults("It's a tie!");
-    }
-    if (userHand == "rock" && houseHand == "scissors") {
-        setResults("YOU WIN!");
-        setScore(Score + 1);
-    }
-    if (userHand == "rock" && houseHand == "paper") {
-        setResults("YOU LOSE!");
-        setScore(Score - 1);
-    }
-    if (userHand == "rock" && houseHand == "rock") {
-        setResults("It's a tie!");
-    }
-    if (userHand == "scissors" && houseHand == "scissors") {
-        Contest.classList.add('active')
 
-        setResults("It's a tie!");
+    switch (userHand + houseHand) {
+        case "scissorspaper":
+        case "rockscissors":
+        case "paperrock":
+            setResults("YOU WIN!");
+            setScore(Score + 1)
+
+            break;
+
+        case "paperscissors":
+        case "scissorsrock":
+        case "rockpaper":
+            setResults("YOU LOSE!");
+            setScore(Score - 1)
+
+            break;
+        case "paperpaper":
+        case "scissorsscissors":
+        case "rockrock":
+            setResults("It's a tie!")
+
+            break;
+        default:
+            break;
     }
-    if (userHand == "scissors" && houseHand == "rock") {
-        setResults("YOU LOSE!");
-        setScore(Score - 1);
-    }
-    if (userHand == "scissors" && houseHand == "paper") {
-        setResults("YOU WIN!");
-        setScore(Score + 1);
-    }
-};
+
+
+}
+
 
 const restartGame = () => {
     let contest = document.querySelector(".contest");
