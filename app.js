@@ -38,9 +38,16 @@ const imagesData = [
     }
 
 ]
+let InitialScore = JSON.parse(localStorage.getItem('score'));
+if (InitialScore !== null) {
+    Score = InitialScore
+    console.log(Score)
+} else {
+    Score = 0
+}
 
 
-let Score = 0
+// let Score = 0
 
 const pickUsersHand = (hand) => {
 
@@ -142,4 +149,5 @@ const setResults = (decision) => {
 const setScore = (newScore) => {
     Score = newScore;
     ScoreValue.innerText = newScore;
+    localStorage.setItem('score', JSON.stringify(newScore))
 }
